@@ -1,2 +1,3 @@
 # bookbot
-A project that counts words and characters in books
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
