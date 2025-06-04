@@ -1,6 +1,7 @@
 from stats import word_counter
 from stats import char_count
 from stats import report
+import sys
 
 def get_book_text(filepath):
     # a function that takes a filepath and returns the contents of the file as a string
@@ -9,9 +10,12 @@ def get_book_text(filepath):
     return file_contents
 
 def main():
-    book_path = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>") 
+        sys.exit(1)
+    book_path = sys.argv[1]
     
-    book_contents = get_book_text("books/frankenstein.txt")
+    book_contents = get_book_text(book_path)
     #print(book_contents)
     
     num_of_words = word_counter(book_contents)
